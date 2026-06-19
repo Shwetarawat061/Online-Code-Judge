@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In | CodeForge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+        .shimmer-btn:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+        .ambient-glow {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+        }
+        .input-recessed {
+            background: rgba(11, 19, 38, 0.5);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+        body {
+            background-color: #0b1326;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#002f38",
+                    "secondary": "#ddb7ff",
+                    "tertiary": "#4cd7f6",
+                    "surface-container-highest": "#2d3449",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#dae2fd",
+                    "inverse-on-surface": "#283044",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-fixed": "#001f26",
+                    "on-primary": "#1000a9",
+                    "primary-container": "#8083ff",
+                    "surface-container-lowest": "#060e20",
+                    "on-primary-fixed": "#07006c",
+                    "surface-container-low": "#131b2e",
+                    "secondary-container": "#6f00be",
+                    "tertiary-fixed": "#acedff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "outline-variant": "#464554",
+                    "surface-tint": "#c0c1ff",
+                    "surface-container": "#171f33",
+                    "primary": "#c0c1ff",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#f0dbff",
+                    "surface-variant": "#2d3449",
+                    "surface-bright": "#31394d",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "on-error": "#690005",
+                    "on-secondary": "#490080",
+                    "tertiary-container": "#009eb9",
+                    "on-secondary-container": "#d6a9ff",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-surface": "#dae2fd",
+                    "surface-container-high": "#222a3d",
+                    "primary-fixed": "#e1e0ff",
+                    "surface-dim": "#0b1326",
+                    "surface": "#0b1326",
+                    "outline": "#908fa0",
+                    "on-primary-container": "#0d0096",
+                    "background": "#0b1326",
+                    "on-secondary-fixed": "#2c0051",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "inverse-primary": "#494bd6",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary": "#003640"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "code-md": ["JetBrains Mono"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "450"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden flex min-h-screen">
+<!-- Background Shader -->
+<div class="fixed inset-0 z-0">
+
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full flex items-center justify-center p-lg">
+<!-- Center Login Card -->
+<div class="glass-card ambient-glow w-full max-w-[480px] p-xl rounded-xl flex flex-col gap-xl">
+<!-- Header Section -->
+<div class="text-center space-y-md">
+<div class="flex justify-center mb-md">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[40px] text-on-primary">terminal</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">Forge Your Future</h1>
+<p class="text-on-surface-variant font-body-md">Enter the Forge to begin your next architectural masterwork.</p>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-lg" onsubmit="event.preventDefault();">
+<div class="flex flex-col gap-sm">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest pl-xs">Terminal Identifier</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-tertiary transition-colors">alternate_email</span>
+<input class="w-full h-12 pl-12 pr-md input-recessed border border-outline-variant/20 rounded-lg font-code-md text-code-md focus:ring-2 focus:ring-tertiary focus:border-tertiary transition-all outline-none text-on-surface placeholder:text-on-surface-variant/40" placeholder="architect@codeforge.ai" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center px-xs">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Access Key</label>
+<a class="font-label-sm text-label-sm text-tertiary hover:underline" href="#">Lost access?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-tertiary transition-colors">lock_open</span>
+<input class="w-full h-12 pl-12 pr-md input-recessed border border-outline-variant/20 rounded-lg font-code-md text-code-md focus:ring-2 focus:ring-tertiary focus:border-tertiary transition-all outline-none text-on-surface placeholder:text-on-surface-variant/40" placeholder="••••••••••••" type="password"/>
+</div>
+</div>
+<button class="shimmer-btn w-full h-14 bg-gradient-to-r from-[#494bd6] to-[#6f00be] text-on-primary font-headline-lg text-headline-lg rounded-lg shadow-lg active:scale-[0.98] transition-transform">
+                    Execute Access
+                </button>
+</form>
+<!-- Social Logins -->
+<div class="flex flex-col gap-lg">
+<div class="flex items-center gap-md">
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">LINK EXTERNAL ACCOUNT</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-md h-12 glass-card hover:bg-surface-variant/30 transition-colors border border-outline-variant/20 rounded-lg font-label-sm text-label-sm group">
+<img class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" data-alt="Official GitHub logo in white against a dark background, representing a high-tech software engineering environment for CodeForge AI. The lighting is crisp and modern, reflecting an industrial elegance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqT5RgNz7Q_cyiSa6IA13aVN1UztIs7xvZkrLeVxgFwVVaURsVoEzPPoJQ86nNWXbsSl1hZSn_f86GvpXc7rT-OF1X10v5r3TImi2-O4va70tgodedaDD1pD_AC3bgIScX8VKU3rA5Bu8AcPdevrao_1Yctw8A4OyL1t23oyYGm1lEfoAtcSTc-sVafCdL07Y3umVciQSnnDBt1RZfLXQvvkHc404kuUUFhZ2AfoUkSJ-1VmxxilNEGulbrgk5S5GfMwzAOfArnncP"/>
+<span>GitHub</span>
+</button>
+<button class="flex items-center justify-center gap-md h-12 glass-card hover:bg-surface-variant/30 transition-colors border border-outline-variant/20 rounded-lg font-label-sm text-label-sm group">
+<img class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" data-alt="Official Google logo with vibrant primary colors optimized for a dark mode UI. The scene is clean and professional, matching the CodeForge AI branding of precision and technical excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7pEcxn__rK2BwwFcqoyCHnYBxYrTsSvy8Ahw7zUB41xdZld7-6mnleZJDdv-X5OHjIphE9dZ6epJAeT-Bsdp2TyhMiPprsNt3CWFfzSrH0S_BYDEJ98a80Gc45beZ4SgPGnMYeG6Lc8T3DAQNUHladZ-JKKlZb-6Arqpkz--bN0InKGUM_wCWQsLc7vCE5T2rM86X97wtS7UJ6FJs0z42erEMXVbPBTb5JAI45skju9xeFpGa2xafNA3OOVMdcWut7TEoLG_dcDYa"/>
+<span>Google</span>
+</button>
+</div>
+</div>
+<!-- Footer Link -->
+<div class="text-center">
+<p class="font-body-md text-on-surface-variant">
+                    New to the Forge? 
+                    <a class="text-tertiary font-bold hover:underline ml-xs" href="#">Initialize Workspace</a>
+</p>
+</div>
+</div>
+</main>
+<!-- SideNavBar Suppressed on Sign-In page per Shell Visibility & Relevance mandate -->
+<!-- (Suppressed because Login is a Linear/Transactional page) -->
+<!-- Interactive Elements Script -->
+<script>
+        // Micro-interaction for input hover states
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            });
+        });
+
+        // Subtle parallax effect on card
+        document.addEventListener('mousemove', (e) => {
+            const card = document.querySelector('.glass-card');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+    </script>
+</body></html>

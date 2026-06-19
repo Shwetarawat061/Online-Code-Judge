@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forge Intelligence | CodeForge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#002f38",
+                    "secondary": "#ddb7ff",
+                    "tertiary": "#4cd7f6",
+                    "surface-container-highest": "#2d3449",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#dae2fd",
+                    "inverse-on-surface": "#283044",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-fixed": "#001f26",
+                    "on-primary": "#1000a9",
+                    "primary-container": "#8083ff",
+                    "surface-container-lowest": "#060e20",
+                    "on-primary-fixed": "#07006c",
+                    "surface-container-low": "#131b2e",
+                    "secondary-container": "#6f00be",
+                    "tertiary-fixed": "#acedff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "outline-variant": "#464554",
+                    "surface-tint": "#c0c1ff",
+                    "surface-container": "#171f33",
+                    "primary": "#c0c1ff",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#f0dbff",
+                    "surface-variant": "#2d3449",
+                    "surface-bright": "#31394d",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "on-error": "#690005",
+                    "on-secondary": "#490080",
+                    "tertiary-container": "#009eb9",
+                    "on-secondary-container": "#d6a9ff",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-surface": "#dae2fd",
+                    "surface-container-high": "#222a3d",
+                    "primary-fixed": "#e1e0ff",
+                    "surface-dim": "#0b1326",
+                    "surface": "#0b1326",
+                    "outline": "#908fa0",
+                    "on-primary-container": "#0d0096",
+                    "background": "#0b1326",
+                    "on-secondary-fixed": "#2c0051",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "inverse-primary": "#494bd6",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary": "#003640"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "code-md": ["JetBrains Mono"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "450"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Geist', sans-serif;
+            overflow: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(23, 31, 51, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-ai {
+            background: linear-gradient(135deg, rgba(192, 193, 255, 0.1) 0%, rgba(76, 215, 246, 0.05) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(192, 193, 255, 0.2);
+        }
+        .glass-card-user {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 15px rgba(76, 215, 246, 0.2);
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .code-gutter {
+            border-right: 1px solid rgba(144, 143, 160, 0.2);
+            color: rgba(144, 143, 160, 0.5);
+            text-align: right;
+            padding-right: 12px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="flex h-screen w-full overflow-hidden">
+<!-- SIDE NAVBAR (From Shared Components JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 flex flex-col py-md z-50">
+<div class="px-md mb-xl">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary text-xl leading-none font-bold tracking-tighter">Forge Engine</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">v2.4.0-stable</p>
+</div>
+</div>
+</div>
+<button class="mx-md mb-lg bg-tertiary-container/20 text-tertiary border border-tertiary/30 py-sm px-md rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-sm transition-all hover:bg-tertiary-container/30 active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+            New Workspace
+        </button>
+<nav class="flex-1 flex flex-col gap-xs px-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant/30 transition-all duration-200 ease-in-out font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:text-tertiary transition-colors">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant/30 transition-all duration-200 ease-in-out font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:text-tertiary transition-colors">code_blocks</span>
+                Problems
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-tertiary-container/20 text-tertiary border-r-2 border-tertiary transition-all duration-200 ease-in-out font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span>
+                Editor
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant/30 transition-all duration-200 ease-in-out font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:text-tertiary transition-colors">bolt</span>
+                Arena
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant/30 transition-all duration-200 ease-in-out font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:text-tertiary transition-colors">monitoring</span>
+                Analytics
+            </a>
+</nav>
+<div class="mt-auto px-sm pt-md border-t border-outline-variant/10">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg">menu_book</span>
+                Documentation
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="ml-64 flex-1 flex flex-col h-full bg-background relative">
+<!-- Background Animation -->
+
+<!-- Top Status Bar -->
+<header class="h-16 flex items-center justify-between px-lg border-b border-outline-variant/10 glass-panel z-10">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h2 class="font-headline-lg text-lg tracking-tight">Forge Intelligence <span class="text-tertiary/60 font-normal ml-sm text-sm">Active Session</span></h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="px-sm py-1 rounded bg-surface-container-highest border border-outline-variant/20 flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant">Synced</span>
+</div>
+<button class="p-base hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</div>
+</header>
+<!-- 3-Column Split Layout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- LEFT COLUMN: Current Context (Code Snippet) -->
+<section class="w-1/4 border-r border-outline-variant/10 flex flex-col bg-surface-container-low/50 backdrop-blur-sm">
+<div class="p-md border-b border-outline-variant/10 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-tighter">Current Context</span>
+<span class="material-symbols-outlined text-sm text-outline">history</span>
+</div>
+<div class="flex-1 overflow-auto p-sm font-code-md text-code-md">
+<div class="flex">
+<div class="code-gutter flex flex-col">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+</div>
+<div class="pl-md text-on-surface/80">
+<span class="text-secondary">async</span> <span class="text-secondary">function</span> <span class="text-primary">processData</span>(items) {<br/>
+                              <span class="text-secondary">const</span> results = [];<br/>
+                              <span class="text-secondary">for</span> (<span class="text-secondary">let</span> i = 0; i &lt; items.length; i++) {<br/>
+                                <span class="text-secondary">const</span> node = items[i];<br/>
+                                <span class="text-tertiary">// Error likely here</span><br/>
+                                results.push(node.metadata.id.toString());<br/>
+                              }<br/>
+                              <span class="text-secondary">return</span> results;<br/>
+                            }
+                        </div>
+</div>
+<div class="mt-lg p-md rounded-lg bg-error-container/10 border border-error/20">
+<div class="flex items-center gap-sm text-error mb-xs">
+<span class="material-symbols-outlined text-sm">error</span>
+<span class="font-label-sm text-label-sm">Runtime Error</span>
+</div>
+<p class="text-xs text-on-surface-variant">TypeError: Cannot read properties of undefined (reading 'id')</p>
+</div>
+</div>
+</section>
+<!-- CENTER COLUMN: Chat Interface -->
+<section class="flex-1 flex flex-col overflow-hidden relative">
+<div class="flex-1 overflow-y-auto p-lg flex flex-col gap-lg" id="chat-messages">
+<!-- AI Welcome -->
+<div class="flex gap-md max-w-[85%] self-start">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="glass-card-ai p-md rounded-xl rounded-tl-none">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                I've analyzed the <span class="text-tertiary">TypeError</span> in your <span class="font-code-md">processData</span> function. It appears that one of the items in your array lacks a <span class="font-code-md">metadata</span> property.
+                                <br/><br/>
+                                Would you like me to implement an optional chaining check or a defensive validation block?
+                            </p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-md max-w-[85%] self-end flex-row-reverse">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">person</span>
+</div>
+<div class="glass-card-user p-md rounded-xl rounded-tr-none">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Let's go with the validation block. How will that affect the space complexity?
+                            </p>
+</div>
+</div>
+<!-- AI Processing Response -->
+<div class="flex gap-md max-w-[85%] self-start">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="glass-card-ai p-md rounded-xl rounded-tl-none relative overflow-hidden">
+<div class="shimmer absolute inset-0 opacity-10"></div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                A simple conditional check won't change your <span class="text-secondary">O(n)</span> space complexity, but using a <span class="font-code-md">filter()</span> before processing might slightly increase temporary memory usage depending on the implementation. 
+                                <br/><br/>
+                                Here is the optimized version:
+                            </p>
+<div class="mt-md p-sm bg-surface-container-lowest/50 rounded border border-outline-variant/20 font-code-md text-xs">
+<span class="text-tertiary">if</span> (!node?.metadata?.id) <span class="text-secondary">continue</span>;
+                            </div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-lg pt-0">
+<div class="relative max-w-4xl mx-auto">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 via-tertiary/20 to-secondary/20 rounded-xl blur opacity-30"></div>
+<div class="relative glass-panel rounded-xl flex flex-col p-xs gap-xs">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body-md py-sm px-md resize-none h-12" placeholder="Ask about the runtime error..." rows="1"></textarea>
+<div class="flex items-center justify-between px-sm pb-xs">
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-variant/30 rounded transition-colors" title="Attach Code">
+<span class="material-symbols-outlined text-lg text-outline">add_circle</span>
+</button>
+<button class="p-xs hover:bg-surface-variant/30 rounded transition-colors" title="AI Model Settings">
+<span class="material-symbols-outlined text-lg text-outline">tune</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-sm text-label-sm flex items-center gap-xs glow-cyan transition-transform active:scale-95">
+                                    Send
+                                    <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Code Insights -->
+<section class="w-1/4 border-l border-outline-variant/10 flex flex-col bg-surface-container-low/50 backdrop-blur-sm">
+<div class="p-md border-b border-outline-variant/10">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-tighter">Code Insights</span>
+</div>
+<div class="p-lg flex flex-col gap-xl">
+<!-- Complexity Metrics -->
+<div class="flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-xs text-on-surface-variant">Time Complexity</span>
+<span class="font-code-md text-tertiary">O(n)</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-3/4"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-xs text-on-surface-variant">Space Complexity</span>
+<span class="font-code-md text-secondary">O(n)</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/2"></div>
+</div>
+</div>
+<!-- Recommendation Bento -->
+<div class="flex flex-col gap-base">
+<div class="glass-card-ai p-md rounded-xl border-l-4 border-l-tertiary">
+<h4 class="font-label-sm text-label-sm text-tertiary mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+                                Optimization
+                            </h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Consider using <span class="font-code-md">map()</span> with a null-check for more idiomatic transformation.</p>
+</div>
+<div class="glass-card-user p-md rounded-xl border-l-4 border-l-outline">
+<h4 class="font-label-sm text-label-sm text-on-surface mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">security</span>
+                                Security
+                            </h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">No obvious data leaks detected in current snippet.</p>
+</div>
+</div>
+<!-- AI Confidence Radar Placeholder -->
+<div class="mt-auto flex flex-col items-center gap-md">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 border-2 border-dashed border-tertiary/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-2 border border-tertiary/40 rounded-full"></div>
+<span class="font-display-lg text-2xl text-tertiary">94%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AI Analysis Confidence</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer (Shared Component JSON Mapping) -->
+<footer class="flex justify-between items-center px-lg py-xs w-full bg-surface-container-lowest border-t border-outline-variant/5 z-10">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 CodeForge AI. All systems operational.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity hover:opacity-80" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity hover:opacity-80" href="#">API Status</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity hover:opacity-80" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity hover:opacity-80" href="#">Terms</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for input auto-resize
+        const tx = document.getElementsByTagName('textarea');
+        for (let i = 0; i < tx.length; i++) {
+            tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+            tx[i].addEventListener("input", OnInput, false);
+        }
+
+        function OnInput() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        }
+
+        // Scroll to bottom of chat
+        const chatContainer = document.getElementById('chat-messages');
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    </script>
+</body></html>

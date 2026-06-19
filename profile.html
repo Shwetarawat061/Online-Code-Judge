@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dev_Architect | CodeForge AI Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cyber-gradient-text {
+            background: linear-gradient(90deg, #c0c1ff, #4cd7f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .neomorphic-recess {
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -1px -1px 3px rgba(255,255,255,0.05);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(192, 193, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.4);
+            transform: translateY(-1px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#002f38",
+                      "secondary": "#ddb7ff",
+                      "tertiary": "#4cd7f6",
+                      "surface-container-highest": "#2d3449",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#dae2fd",
+                      "inverse-on-surface": "#283044",
+                      "on-background": "#dae2fd",
+                      "on-tertiary-fixed": "#001f26",
+                      "on-primary": "#1000a9",
+                      "primary-container": "#8083ff",
+                      "surface-container-lowest": "#060e20",
+                      "on-primary-fixed": "#07006c",
+                      "surface-container-low": "#131b2e",
+                      "secondary-container": "#6f00be",
+                      "tertiary-fixed": "#acedff",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "outline-variant": "#464554",
+                      "surface-tint": "#c0c1ff",
+                      "surface-container": "#171f33",
+                      "primary": "#c0c1ff",
+                      "error": "#ffb4ab",
+                      "secondary-fixed": "#f0dbff",
+                      "surface-variant": "#2d3449",
+                      "surface-bright": "#31394d",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-error": "#690005",
+                      "on-secondary": "#490080",
+                      "tertiary-container": "#009eb9",
+                      "on-secondary-container": "#d6a9ff",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-surface": "#dae2fd",
+                      "surface-container-high": "#222a3d",
+                      "primary-fixed": "#e1e0ff",
+                      "surface-dim": "#0b1326",
+                      "surface": "#0b1326",
+                      "outline": "#908fa0",
+                      "on-primary-container": "#0d0096",
+                      "background": "#0b1326",
+                      "on-secondary-fixed": "#2c0051",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "inverse-primary": "#494bd6",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "on-tertiary": "#003640"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "40px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "label-sm": ["JetBrains Mono"],
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"],
+                      "code-md": ["JetBrains Mono"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "450"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="flex overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 flex flex-col py-md z-50">
+<div class="px-md mb-xl flex items-center gap-base">
+<div class="w-10 h-10 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">terminal</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-primary text-lg">Forge Engine</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0-stable</p>
+</div>
+</div>
+<nav class="flex-grow space-y-xs px-sm">
+<a class="flex items-center gap-md p-md rounded transition-all duration-200 ease-in-out text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-md p-md rounded transition-all duration-200 ease-in-out text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">code_blocks</span> Problems
+            </a>
+<a class="flex items-center gap-md p-md rounded transition-all duration-200 ease-in-out text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">terminal</span> Editor
+            </a>
+<a class="flex items-center gap-md p-md rounded transition-all duration-200 ease-in-out text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">bolt</span> Arena
+            </a>
+<a class="flex items-center gap-md p-md rounded transition-all duration-200 ease-in-out text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">monitoring</span> Analytics
+            </a>
+<!-- Active State Logic: Mapping to Dashboard for overall profile view -->
+<a class="flex items-center gap-md p-md rounded bg-tertiary-container/20 text-tertiary border-r-2 border-tertiary font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">account_circle</span> Profile
+            </a>
+</nav>
+<div class="px-sm mt-auto space-y-xs">
+<button class="w-full py-md px-lg bg-primary text-on-primary font-bold rounded-lg mb-lg hover:opacity-90 transition-opacity">
+                New Workspace
+            </button>
+<a class="flex items-center gap-md p-md rounded text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">menu_book</span> Documentation
+            </a>
+<a class="flex items-center gap-md p-md rounded text-on-surface-variant hover:bg-surface-variant/30 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">help_outline</span> Support
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 flex-1 h-screen overflow-y-auto scroll-smooth">
+<!-- Top Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm flex justify-between items-center px-lg py-sm">
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-md border-r border-outline-variant/10 pr-md">
+<span class="font-headline-lg text-primary font-bold tracking-tighter">CodeForge AI</span>
+</div>
+<div class="flex items-center bg-surface-container-high px-md py-xs rounded-full gap-base border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</button>
+<button class="p-xs rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-xs rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Close-up professional headshot of a developer in a dark hoodie with subtle purple and cyan ambient lighting. The background features blurred lines of green code and digital interfaces. The aesthetic is sharp, technical, and high-fidelity, matching an Industrial Elegance theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6GDS5NMZgLaq_vEwL352JPc5MyjlGSkhH1X_KP4aSYnbB1WESTWA0abigrKT8tLv9Y5ivCL0J68a3A26dwjegvs-f4MZewtkdXicQJVA1SlExIltUudNnrW_FM8MDPXEUBmhyYyE2ZVA8g0y1WKn7DInRSwT9V5LKcgry1UIDlnlQCoQ5AYlTIBTQN7OvGDWTiNTC-a8sgqspEOSNvmJ7hZJyjBrupeAQi009g1QyxYY3a6OcbD1555CUotzKMox8cHKDKW6AQOF9"/>
+</div>
+</div>
+</header>
+<!-- Profile Content -->
+<div class="p-lg max-w-7xl mx-auto space-y-lg">
+<!-- Hero Section -->
+<section class="relative h-64 rounded-xl overflow-hidden border border-outline-variant/10 glass-card">
+<div class="absolute inset-0 z-0">
+
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-lg flex items-end justify-between z-10">
+<div class="flex items-center gap-lg">
+<div class="w-24 h-24 rounded-xl border-2 border-primary overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A stylized avatar for a developer named Dev_Architect. The portrait is a sleek, 3D rendered character wearing tech-wear, with glowing cyan circuitry patterns on their skin. The background is a dark, abstract void with floating code snippets in purple. The overall style is high-end, modern, and tech-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0rqgCNJY-uXwopeCaXURvyE4NwTPsa2xql7JUoG23vsPGkrNYwx0zlYJzpSQROrd0qfwnYaEpNyMt8ZUMROu0jswSeOrmrJEHpXwWURfGQUfz2XHvUMMwnegkwRyclXMFy18pWbN2QNK7mBdSCX9x_eszepXIWqIOZWt-MkqK9Dllw6WNWCITzOUunRXunQH8Urc-qoFdFY8K9bynSNDlxFNDpU7zEDx8-r1cjMd9k2BLFrJ0mvlYpf_NsrDFcNcIpOYB0eQsPUnb"/>
+</div>
+<div>
+<h2 class="font-display-lg text-display-lg cyber-gradient-text">Dev_Architect</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                Lead Full-Stack Architect &amp; AI Specialist
+                            </p>
+</div>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-md bg-primary-container text-on-primary-container font-bold rounded-lg glow-button flex items-center gap-xs">
+<span class="material-symbols-outlined">add</span> Follow
+                        </button>
+<button class="px-lg py-md border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-surface-variant/50 transition-colors">
+                            Hire Me
+                        </button>
+</div>
+</div>
+</section>
+<!-- Stats & Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Main Stats Column -->
+<div class="md:col-span-8 space-y-lg">
+<!-- Top Stats Bar -->
+<div class="grid grid-cols-3 gap-lg">
+<div class="glass-card p-lg rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-xs">Solved Problems</span>
+<span class="font-display-lg text-display-lg text-primary">1,284</span>
+<div class="w-full h-1 bg-surface-variant/50 mt-md rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary shadow-[0_0_10px_rgba(192,193,255,0.5)]"></div>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-xs">Global Rank</span>
+<span class="font-display-lg text-display-lg text-tertiary">#42</span>
+<p class="font-label-sm text-tertiary/60">Top 0.01%</p>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-xs">Contest Rating</span>
+<span class="font-display-lg text-display-lg text-secondary">2,850</span>
+<p class="font-label-sm text-secondary/60">Grandmaster</p>
+</div>
+</div>
+<!-- Rating Trend Graph Container -->
+<div class="glass-card p-lg rounded-xl relative overflow-hidden">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-lg text-xl">Rating Evolution</h3>
+<div class="flex gap-xs">
+<span class="px-sm py-xs bg-surface-variant/50 rounded-full text-xs font-label-sm">6 Months</span>
+<span class="px-sm py-xs border border-outline-variant/30 rounded-full text-xs font-label-sm">1 Year</span>
+</div>
+</div>
+<div class="h-64 w-full flex items-end gap-1">
+<!-- Simulated Graph Bars with Neumorphic touch -->
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[42%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[58%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary/30 hover:bg-primary/50 transition-all rounded-t-sm h-[82%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface p-1 rounded border border-primary text-[10px] whitespace-nowrap">Peak: 2,850</div>
+</div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-all rounded-t-sm h-[90%]"></div>
+</div>
+<div class="flex justify-between mt-md text-[10px] text-on-surface-variant font-label-sm">
+<span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span>
+</div>
+</div>
+<!-- Contribution Heatmap -->
+<div class="glass-card p-lg rounded-xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-lg text-xl">4,231 Contributions in 2024</h3>
+<div class="flex items-center gap-xs text-xs text-on-surface-variant">
+<span>Less</span>
+<div class="flex gap-1">
+<div class="w-3 h-3 bg-surface-variant/30 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary/20 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary/50 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary/80 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+</div>
+<span>More</span>
+</div>
+</div>
+<div class="grid grid-cols-[repeat(52,1fr)] gap-1 h-32">
+<!-- Loop for Heatmap - Generic filler -->
+<script>
+                                for(let i=0; i < 364; i++) {
+                                    const opacity = Math.random();
+                                    let colorClass = "bg-surface-variant/20";
+                                    if(opacity > 0.3) colorClass = "bg-primary/20";
+                                    if(opacity > 0.6) colorClass = "bg-primary/50";
+                                    if(opacity > 0.8) colorClass = "bg-primary";
+                                    document.write(`<div class="w-full h-full rounded-sm ${colorClass}"></div>`);
+                                }
+                            </script>
+</div>
+</div>
+</div>
+<!-- Sidebar Grid Column -->
+<div class="md:col-span-4 space-y-lg">
+<!-- Language Mastery Radar -->
+<div class="glass-card p-lg rounded-xl h-80 flex flex-col items-center">
+<h3 class="font-headline-lg text-xl mb-md self-start">Language Mastery</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="absolute inset-0 border border-outline-variant/20 rounded-full scale-100"></div>
+<div class="absolute inset-0 border border-outline-variant/20 rounded-full scale-75"></div>
+<div class="absolute inset-0 border border-outline-variant/20 rounded-full scale-50"></div>
+<div class="absolute inset-0 border border-outline-variant/20 rounded-full scale-25"></div>
+<!-- Simulated Radar Shape -->
+<svg class="w-full h-full transform -rotate-90">
+<polygon class="fill-tertiary/30 stroke-tertiary stroke-2" points="96,10 160,50 180,110 96,180 30,120 40,50"></polygon>
+</svg>
+<span class="absolute top-0 text-[10px] font-label-sm">C++</span>
+<span class="absolute bottom-0 text-[10px] font-label-sm">Python</span>
+<span class="absolute left-0 text-[10px] font-label-sm">Rust</span>
+<span class="absolute right-0 text-[10px] font-label-sm">Go</span>
+</div>
+<div class="mt-md w-full space-y-xs">
+<div class="flex justify-between text-xs font-label-sm">
+<span>C++</span><span class="text-tertiary">98%</span>
+</div>
+<div class="flex justify-between text-xs font-label-sm">
+<span>Rust</span><span class="text-tertiary">92%</span>
+</div>
+</div>
+</div>
+<!-- Connections Sidebar -->
+<div class="glass-card p-lg rounded-xl space-y-md">
+<h3 class="font-headline-lg text-xl">Nexus Connections</h3>
+<div class="space-y-sm">
+<a class="flex items-center gap-md p-md rounded-lg bg-surface-container-high border border-outline-variant/10 hover:border-primary/50 transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-black/50 rounded">
+<span class="material-symbols-outlined text-on-surface">hub</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">GitHub</p>
+<p class="text-xs text-on-surface-variant">@dev_architect_pro</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">open_in_new</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg bg-surface-container-high border border-outline-variant/10 hover:border-primary/50 transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/20 rounded">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Portfolio</p>
+<p class="text-xs text-on-surface-variant">architect.dev</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">open_in_new</span>
+</a>
+<a class="flex items-center gap-md p-md rounded-lg bg-surface-container-high border border-outline-variant/10 hover:border-primary/50 transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-secondary/20 rounded">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Contact</p>
+<p class="text-xs text-on-surface-variant">Email Dev_Architect</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">send</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Badges & Certificates Section -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-2xl cyber-gradient-text">Badges &amp; Certificates</h3>
+<button class="text-primary font-label-sm flex items-center gap-xs">View All <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-lg">
+<!-- Badge 1 -->
+<div class="glass-card p-md rounded-xl text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto relative mb-md">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/40 transition-colors"></div>
+<div class="relative w-full h-full bg-surface-container rounded-full border border-primary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<p class="font-bold text-sm">System Architect</p>
+<p class="text-[10px] text-on-surface-variant">Level 50 Achievement</p>
+</div>
+<!-- Badge 2 -->
+<div class="glass-card p-md rounded-xl text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto relative mb-md">
+<div class="absolute inset-0 bg-secondary/20 rounded-full blur-xl group-hover:bg-secondary/40 transition-colors"></div>
+<div class="relative w-full h-full bg-surface-container rounded-full border border-secondary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<p class="font-bold text-sm">Fastest Coder</p>
+<p class="text-[10px] text-on-surface-variant">Top 1% Response Time</p>
+</div>
+<!-- Badge 3 -->
+<div class="glass-card p-md rounded-xl text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto relative mb-md">
+<div class="absolute inset-0 bg-tertiary/20 rounded-full blur-xl group-hover:bg-tertiary/40 transition-colors"></div>
+<div class="relative w-full h-full bg-surface-container rounded-full border border-tertiary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<p class="font-bold text-sm">Secure Core</p>
+<p class="text-[10px] text-on-surface-variant">Vuln Hunting Expert</p>
+</div>
+<!-- Badge 4 -->
+<div class="glass-card p-md rounded-xl text-center group cursor-pointer">
+<div class="w-20 h-20 mx-auto relative mb-md">
+<div class="absolute inset-0 bg-error/20 rounded-full blur-xl group-hover:bg-error/40 transition-colors"></div>
+<div class="relative w-full h-full bg-surface-container rounded-full border border-error/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+</div>
+<p class="font-bold text-sm">Arena King</p>
+<p class="text-[10px] text-on-surface-variant">100 Won Duels</p>
+</div>
+<!-- Certification Placeholder -->
+<div class="glass-card p-md rounded-xl text-center flex flex-col justify-center border-dashed border-2 border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-4xl mb-xs">add_circle</span>
+<p class="font-bold text-xs">Upload Certificate</p>
+</div>
+<!-- Certification Placeholder -->
+<div class="glass-card p-md rounded-xl text-center flex flex-col justify-center border-dashed border-2 border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-4xl mb-xs">verified</span>
+<p class="font-bold text-xs">Verify Skills</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full mt-auto bg-surface-container-lowest border-t border-outline-variant/5 flex justify-between items-center px-lg py-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 CodeForge AI. All systems operational.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant transition-opacity hover:opacity-80 hover:text-primary underline" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant transition-opacity hover:opacity-80 hover:text-primary underline" href="#">API Status</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant transition-opacity hover:opacity-80 hover:text-primary underline" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant transition-opacity hover:opacity-80 hover:text-primary underline" href="#">Terms</a>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interaction for follows
+        document.querySelector('.glow-button').addEventListener('click', function() {
+            this.classList.toggle('bg-tertiary');
+            this.innerHTML = this.innerHTML.includes('Following') ? 
+                '<span class="material-symbols-outlined">add</span> Follow' : 
+                '<span class="material-symbols-outlined">check</span> Following';
+        });
+
+        // Simple mouse tracking for radar glow
+        const canvas = document.querySelector('main');
+        canvas.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            // Potentially add more dynamic effects here
+        });
+    </script>
+</body></html>
